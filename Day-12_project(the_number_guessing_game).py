@@ -5,8 +5,6 @@ from art import logo
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
-# Random number from 1 to 100
-number_selected = random.randint(1, 100)
 
 # function to assign number of attempts depending on difficulty chosen
 def difficulty(level):
@@ -17,6 +15,8 @@ def difficulty(level):
 
 # Function to start the game
 def play_game():
+    # Random number from 1 to 100
+    number_selected = random.randint(1, 100)
     # Welcome screen and play choice
     print(logo)
     print("\n")
@@ -44,7 +44,7 @@ def play_game():
             is_game_over = True
             print(f"You guessed right, the number is {number_selected}. You win🤗")
         if attempts == 0:
-            print("You are out of attempts, you lose😓")
+            print(f"You are out of attempts. The number is {number_selected}, you lose😓")
 
     # Repeat game choice
     print("\n")
